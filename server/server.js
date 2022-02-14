@@ -8,7 +8,7 @@ const { typeDefs, resolvers } = require('./schemas')
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -32,5 +32,5 @@ app.get('*', (req, res)=>{
 })
 
 db.once('open', () => {
-  app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}/graphql`));
+  app.listen(port, () => console.log(`🌍 Now listening on localhost:${port}/graphql`));
 });
